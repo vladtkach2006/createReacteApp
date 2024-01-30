@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import { createElement } from "react";
+// declarative
 export const App = () => {
-	const formatCurrentDate = new Date().toLocaleDateString(); // декларативный
-	return (
-		<div className='App'>
-			<header className='App-header'>
-				<img src={logo} className='App-logo' alt='logo' />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className='App-link'
-					href='https://reactjs.org'
-					target='_blank'
-					rel='noopener noreferrer'
-				>
-					Learn React
-				</a>
-				<div>Today's Data: {formatCurrentDate}</div>
-			</header>
-		</div>
-	);
+  const formatCurrentDate = new Date().toLocaleDateString(); 
+
+  return createElement(
+    "div",
+    { className: "App" },
+    createElement(
+      "header",
+      { className: "App-header" },
+      createElement("img", { src: logo, className: "App-logo", alt: "logo" }),
+      createElement(
+        "p",
+        null,
+        "Edit ",
+        createElement("code", null, "src/App.js"),
+        " and save to reload.",
+      ),
+      createElement(
+        "a",
+        {
+          className: "App-link",
+          href: "https://reactjs.org",
+          target: "_blank",
+          rel: "noopener noreferrer",
+        },
+        "Learn React",
+      ),
+      createElement("div", null, "Today's Data: ", formatCurrentDate),
+    ),
+  );
 };
