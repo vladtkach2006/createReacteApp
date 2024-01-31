@@ -3,7 +3,7 @@ import "./App.css";
 import { createElement } from "react";
 // declarative
 export const App = () => {
-  const formatCurrentDate = new Date().toLocaleDateString(); 
+  const formatCurrentDate = new Date().toLocaleDateString();
 
   return createElement(
     "div",
